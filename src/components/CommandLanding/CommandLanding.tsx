@@ -129,7 +129,6 @@ export default function CommandLanding() {
         placeholder="Search..."
         className={currentTheme === 'light' ? styles.inputLight : styles.input}
         onChange={filterBySearch}
-        autoComplete="off"
       />
 
       <CommandList

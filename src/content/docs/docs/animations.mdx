@@ -5,6 +5,7 @@ description: Add animations to the Command Component
 
 import ExampleContainer from '../../../components/ExampleContainer.astro';
 import CommandAnimatedExample from '../../../components/CommandAnimatedExample/CommandAnimatedExample';
+import CommandLanding from '../../../components/CommandLanding/CommandLanding';
 
 To add animations, you can use the `className` attribute to add an animation using CSS:
 
@@ -85,3 +86,5 @@ _styles.module.css_
 <ExampleContainer>
   <CommandAnimatedExample client:idle />
 </ExampleContainer>
+
+<CommandLanding client:idle />

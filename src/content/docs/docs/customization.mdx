@@ -5,6 +5,7 @@ description: Customize the CommandKey components
 
 import ExampleContainer from '../../../components/ExampleContainer.astro';
 import CommandCustomizedExample from '../../../components/CommandCustomizedExample/CommandCustomizedExample';
+import CommandLanding from '../../../components/CommandLanding/CommandLanding';
 
 The recommended way is to use the `className` attribute to change the stylesheet using a normal CSS file:
 
@@ -109,3 +110,5 @@ _styles.module.css_
 <ExampleContainer>
   <CommandCustomizedExample client:idle />
 </ExampleContainer>
+
+<CommandLanding client:idle />

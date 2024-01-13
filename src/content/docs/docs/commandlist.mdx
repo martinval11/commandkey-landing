@@ -14,9 +14,7 @@ import { CommandList } from 'commandkey';
 ### Use
 
 ```tsx
-<CommandList>
-  {/* Here your `CommandOption` component */}
-</CommandList>
+<CommandList>{/* Here your `CommandOption` component */}</CommandList>
 ```
 
 ### Props
@@ -28,10 +26,12 @@ import { CommandList } from 'commandkey';
 ### Interface
 
 ```ts
-export interface CommandList {
+export interface CommandListProps {
   children: React.ReactNode;
   className?: string | any;
+  id?: string;
   style?: React.CSSProperties;
+  props?: any;
 }
 ```
 

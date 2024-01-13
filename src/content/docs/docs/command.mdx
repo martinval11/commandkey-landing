@@ -6,11 +6,13 @@ description: Command Component
 import CommandLanding from '../../../components/CommandLanding/CommandLanding';
 
 ### Import
+
 ```js
 import { Command } from 'commandkey';
 ```
 
 ### Use
+
 ```tsx
 <Command open={true} onClose={() => {}}>
   {/* Here your CommandInput, CommandList or CommandOption */}
@@ -18,17 +20,19 @@ import { Command } from 'commandkey';
 ```
 
 ### Props
+
 - `children` Inside it uses the input, list and option components.
 - `className` Edit the input styles using a CSS class.
 - `classNameBackground` CSS class for the background behind the Command' Card.
-- `open` Open or close the command palette. 
+- `open` Open or close the command palette.
 - `onClose` Function to be executed when the command closes.
 - `style` Edit the container styles inline.
 - `styleBackground` Write CSS for the background behind the Command' Card.
 
 ### Interface
+
 ```ts
-export interface Command {
+export interface CommandProps {
   open: boolean;
   onClose: () => void;
   className?: string | any;
@@ -36,6 +40,7 @@ export interface Command {
   style?: React.CSSProperties;
   styleBackground?: React.CSSProperties;
   children: React.ReactNode;
+  props?: any;
 }
 ```
 

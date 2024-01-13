@@ -32,11 +32,14 @@ import { CommandInput } from 'commandkey';
 ### Interface
 
 ```ts
-export interface CommandInput {
+export interface CommandInputProps {
   onChange?: (...args: any) => void;
   placeholder?: string;
   style?: React.CSSProperties;
   className?: string | any;
+  autoFocus?: boolean;
+  autoComplete?: string;
+  value?: string;
   props?: any;
 }
 ```

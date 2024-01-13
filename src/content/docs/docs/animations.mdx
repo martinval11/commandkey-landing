@@ -1,0 +1,87 @@
+---
+title: Animations
+description: Add animations to the Command Component
+---
+
+import ExampleContainer from '../../../components/ExampleContainer.astro';
+import CommandAnimatedExample from '../../../components/CommandAnimatedExample/CommandAnimatedExample';
+
+To add animations, you can use the `className` attribute to add an animation using CSS:
+
+```js
+<Command className={styles.command}>{/* ... */}</Command>
+```
+
+```css
+.command {
+  animation: fadein 0.3s ease-in-out forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+## Example
+
+_App.tsx_
+
+```tsx
+import { Command, CommandList, CommandInput, CommandOption } from 'commandkey';
+import styles from './styles.module.css';
+import { useState } from 'react';
+
+export default function CommandExample() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Open animated modal</button>
+
+      <Command
+        open={open}
+        onClose={() => setOpen(false)}
+        className={styles.animatedCommand}
+      >
+        <CommandInput placeholder="Search" />
+
+        <CommandList>
+          <CommandOption>Apple</CommandOption>
+          <CommandOption>Orange</CommandOption>
+          <CommandOption>Pear</CommandOption>
+        </CommandList>
+      </Command>
+    </>
+  );
+}
+```
+
+_styles.module.css_
+
+```css
+.animatedCommand {
+  animation: fadein 0.3s ease-in-out forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+## Result
+
+<ExampleContainer>
+  <CommandAnimatedExample client:idle />
+</ExampleContainer>

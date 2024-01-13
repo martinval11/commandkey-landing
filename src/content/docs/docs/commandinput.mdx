@@ -1,0 +1,40 @@
+---
+title: CommandInput
+description: CommandInput Component
+---
+
+### Import
+
+```js
+import { CommandInput } from 'commandkey';
+```
+
+### Use
+
+```tsx
+<CommandInput
+  placeholder="Search"
+  onChange={(e) => {
+    console.log(e);
+  }}
+/>
+```
+
+### Props
+
+- `onChange` Execute a function after the input value changes.
+- `placeholder` Edit the default placeholder.
+- `style` Edit the styles of the input inline.
+- `className` Edit the styles of the input using a CSS class.
+
+### Interface
+
+```ts
+export interface CommandInput {
+  onChange?: (...args: any) => void;
+  placeholder?: string;
+  style?: React.CSSProperties;
+  className?: string | any;
+  props?: any;
+}
+```

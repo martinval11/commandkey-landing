@@ -1,0 +1,38 @@
+---
+title: Command
+description: Command Component
+---
+
+### Import
+```js
+import { Command } from 'commandkey';
+```
+
+### Use
+```tsx
+<Command open={true} onClose={() => {}}>
+  {/* Here your CommandInput, CommandList or CommandOption */}
+</Command>
+```
+
+### Props
+- `children` Inside it uses the input, list and option components.
+- `className` Edit the input styles using a CSS class.
+- `classNameBackground` CSS class for the background behind the Command' Card.
+- `open` Open or close the command palette. 
+- `onClose` Function to be executed when the command closes.
+- `style` Edit the container styles inline.
+- `styleBackground` Write CSS for the background behind the Command' Card.
+
+### Interface
+```ts
+export interface Command {
+  open: boolean;
+  onClose: () => void;
+  className?: string | any;
+  classNameBackground?: string | any;
+  style?: React.CSSProperties;
+  styleBackground?: React.CSSProperties;
+  children: React.ReactNode;
+}
+```

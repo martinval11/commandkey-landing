@@ -1,0 +1,34 @@
+---
+title: CommandList
+description: CommandList Component
+---
+
+### Import
+
+```js
+import { CommandList } from 'commandkey';
+```
+
+### Use
+
+```tsx
+<CommandList>
+  {/* Here your `CommandOption` component */}
+</CommandList>
+```
+
+### Props
+
+- `children` Inside it uses the CommandOption component.
+- `className` Edit the style of the list using a CSS class.
+- `style` Edit the style of the list inline.
+
+### Interface
+
+```ts
+export interface CommandList {
+  children: React.ReactNode;
+  className?: string | any;
+  style?: React.CSSProperties;
+}
+```

@@ -1,0 +1,42 @@
+---
+title: CommandOption
+description: CommandOption Component
+---
+
+### Import
+
+```js
+import { CommandOption } from 'commandkey';
+```
+
+### Use
+
+```tsx
+<CommandOption>Hello World!</CommandOption>
+```
+
+### Props
+
+- `value` The value of the option.
+- `id` The identification of the option
+- `className` Edit the styles of the button using a CSS class.
+- `style` Edit the list styles inline.
+- `mouseOverColor` The background when you hover the button.
+- `mouseLeaveColor` The background when you unhover the button.
+- `children` Inside it uses any html tag
+- `onClick` Execute a function after click the button.
+
+### Interface
+
+```ts
+export interface CommandOption {
+  value?: string | number | readonly string[] | undefined;
+  id?: string;
+  className?: string | any;
+  style?: React.CSSProperties;
+  mouseOverColor?: string;
+  mouseLeaveColor?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+```

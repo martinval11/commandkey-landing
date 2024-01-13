@@ -1,0 +1,55 @@
+---
+title: Getting Started
+description: Getting Started with CommandKey with React.
+---
+
+import ExampleContainer from '../../../components/ExampleContainer.astro';
+import CommandExample from '../../../components/CommandExample';
+
+Thanks for you interest in CommandKey, please follow this guide to get started.
+
+First, you need to have [Node.js](https://nodejs.org/en) installed on your computer (version 18 or above) and a React.js project:
+
+```sh
+npm create vite@latest commandkey-test -- --template react-ts
+cd commandkey-test
+npm install
+```
+
+Now install commandkey to start using it:
+```sh
+npm install commandkey
+```
+
+> If you have CSS global styles (for example: in your index.css), it's possible this may interfere with the styles of commandkey, ensure you don't have global styles like `button {...}` to prevent strange behaviors in the stylesheet. 
+
+Go to src/App.tsx and add the following code:
+```js
+import { Command, CommandList, CommandInput, CommandOption } from 'commandkey';
+import { useState } from 'react';
+
+export default function App() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Open modal</button>
+
+      <Command open={open} onClose={() => setOpen(false)}>
+        <CommandInput placeholder="Search" />
+
+        <CommandList>
+          <CommandOption>Apple</CommandOption>
+          <CommandOption>Orange</CommandOption>
+          <CommandOption>Pear</CommandOption>
+        </CommandList>
+      </Command>
+    </>
+  );
+}
+```
+
+## Result
+<ExampleContainer>
+  <CommandExample client:idle />
+</ExampleContainer>

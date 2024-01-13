@@ -1,0 +1,10 @@
+#goToDocsButton {
+  background: var(--sl-color-text-accent);
+  color: var(--sl-color-black);
+  border-radius: 999rem;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  font-size: var(--sl-text-base);
+  display: flex;
+  width: 15ch;
+}

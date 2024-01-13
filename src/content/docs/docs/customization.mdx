@@ -1,0 +1,111 @@
+---
+title: Customization
+description: Customize the CommandKey components
+---
+
+import ExampleContainer from '../../../components/ExampleContainer.astro';
+import CommandCustomizedExample from '../../../components/CommandCustomizedExample/CommandCustomizedExample';
+
+The recommended way is to use the `className` attribute to change the stylesheet using a normal CSS file:
+
+```js
+<CommandInput className="custom-input" />
+```
+
+```css
+.custom-input {
+  background: #000 !important; /* !important to override the default style */
+}
+```
+
+Or you can use the `style` attribute to change the stylesheet inline:
+
+> It's not recommended to use the `style` attribute. Because it will ignore all the default styles and you will have an unstyled button. If you want to maintain the default button structure, use the `className` attribute.
+
+```js
+<CommandInput
+  style={{
+    // Default Styles
+    outline: 'none',
+    width: '100%',
+    border: 'none',
+    borderBottom: '1px solid rgb(39 39 42)',
+    backgroundColor: 'rgb(24 24 27)',
+    color: '#fff',
+    padding: '16px',
+
+    // Styles Added
+    background: '#000',
+  }}
+/>
+```
+
+## Example
+
+_App.tsx_
+```tsx
+import { Command, CommandList, CommandInput, CommandOption } from 'commandkey';
+import { useState } from 'react';
+
+import styles from './styles.module.css';
+
+export default function App() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Open modal</button>
+
+      <Command
+        open={open}
+        onClose={() => setOpen(false)}
+        className={styles.commandContainer}
+      >
+        <CommandInput placeholder="Search" className={styles.commandInput} />
+
+        <CommandList className={styles.commandList}>
+          <CommandOption className={styles.commandOption}>Apple</CommandOption>
+          <CommandOption className={styles.commandOption}>Orange</CommandOption>
+          <CommandOption className={styles.commandOption}>Pear</CommandOption>
+          <CommandOption className={styles.commandOption}>Banana</CommandOption>
+        </CommandList>
+      </Command>
+    </>
+  );
+}
+
+```
+
+_styles.module.css_
+```css
+.commandContainer {
+  background: #1E1E2E !important;
+  border-color: #545477 !important;
+ }
+
+.commandInput {
+  background: #1E1E2E !important;
+  border-color: #545477 !important;
+  padding: 10px !important;
+}
+
+.commandList {
+  flex-direction: row !important;
+}
+
+.commandOption {
+  background: #1E1E2E !important;
+  width: 50% !important;
+  margin-top: 0 !important;
+  transition: background .1s;
+
+  &:hover {
+    background: #545477 !important;
+  }
+}
+```
+
+## Result
+<ExampleContainer>
+  <CommandCustomizedExample client:idle />
+</ExampleContainer>

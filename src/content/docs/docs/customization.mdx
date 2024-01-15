@@ -80,31 +80,32 @@ export default function App() {
 _styles.module.css_
 ```css
 .commandContainer {
-  background: #1E1E2E;
-  border-color: #545477;
+  background: #1E1E2E !important;
+  border-color: #545477 !important;
  }
 
 .commandInput {
-  background: #1E1E2E;
-  border-color: #545477;
-  padding: 10px;
+  background: #1E1E2E !important;
+  border-color: #545477 !important;
+  padding: 10px !important;
 }
 
 .commandList {
-  flex-direction: row;
+  flex-direction: row !important;
 }
 
 .commandOption {
-  background: #1E1E2E;
-  width: 50%;
-  margin-top: 0;
-  transition: background .1s;
+  background: #1E1E2E !important;
+  width: 50% !important;
+  margin-top: 0 !important;
+  transition: background .1s !important;
 
   &:hover {
-    background: #545477;
+    background: #545477 !important;
   }
 }
 ```
+> `!important` is used to override the default styles
 
 ## Result
 <ExampleContainer>

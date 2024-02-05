@@ -17,12 +17,40 @@ cd commandkey-test
 npm install
 ```
 
+## Tailwind CSS Setup
+Since v0.2.9, you need to install Tailwind CSS in your project to use it.
+
+```sh
+npm install -D tailwindcss postcss autoprefixer tailwind-merge
+npx tailwindcss init -p
+```
+
+Configure tailwindcss:
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Add directives to your CSS:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 Now install commandkey to start using it:
 ```sh
 npm install commandkey
 ```
-
-> If you have CSS global styles (for example: in your index.css), it's possible this may interfere with the styles of commandkey, ensure you don't have global styles like `button {...}` to prevent strange behaviors in the stylesheet. 
 
 Go to src/App.tsx and add the following code:
 ```js

@@ -1,6 +1,7 @@
-import { Command, CommandList, CommandInput, CommandOption } from 'commandkey';
-import styles from './styles.module.css';
 import { useEffect, useState } from 'react';
+import { Command, CommandList, CommandInput, CommandOption } from 'commandkey';
+
+import clsx from 'clsx';
 
 const itemList = [
   {
@@ -91,14 +92,14 @@ export default function CommandLanding() {
     const getTheme: any = localStorage.getItem('starlight-theme');
 
     if (getTheme) setCurrentTheme(getTheme);
-  }, [currentTheme])
+  }, [currentTheme]);
 
   useEffect(() => {
     const handleKeyDown = (event: any) => {
       if (event.key === 'k' && event.ctrlKey) {
         event.preventDefault();
         setOpen(true);
-        console.log(currentTheme)
+        console.log(currentTheme);
       }
     };
 
@@ -118,28 +119,42 @@ export default function CommandLanding() {
         // Reset the filtered list with the default values
         setFilteredList(itemList);
       }}
-      className={
-        currentTheme === 'light' ? styles.commandLight : styles.command
-      }
-      classNameBackground={
-        currentTheme === 'light' ? styles.commandLightBackground : null
-      }
+      className={clsx(
+        currentTheme === 'light' && 'border-gray-300',
+        currentTheme !== 'light' && 'bg-[#17181c] border-[#23262f]'
+      )}
+      overlayClassName={clsx(
+        currentTheme === 'light' && 'bg-white',
+        currentTheme !== 'light' && 'bg-black'
+      )}
     >
       <CommandInput
         placeholder="Search..."
-        className={currentTheme === 'light' ? styles.inputLight : styles.input}
+        className={clsx(
+          currentTheme === 'light' && 'bg-white text-gray-900 border-gray-300',
+          currentTheme !== 'light' && 'bg-[#17181c] border-[#23262f]'
+        )}
         onChange={filterBySearch}
       />
 
       <CommandList
-        className={currentTheme === 'light' ? styles.listLight : styles.list}
+        className={clsx(
+          currentTheme === 'light' && 'bg-white text-gray-900',
+          currentTheme !== 'light' && ''
+        )}
       >
         {filteredList.map((item, index) => (
-          <a href={item.url} key={index}>
+          <a href={item.url} key={index} className="no-underline">
             <CommandOption
-              className={
-                currentTheme === 'light' ? styles.buttonLight : styles.button
-              }
+              className={`
+                flex items-center gap-2
+
+                ${clsx(
+                  currentTheme === 'light' &&
+                    'bg-white text-gray-900 hover:bg-gray-200',
+                  currentTheme !== 'light' && 'bg-[#17181c] hover:bg-[#23262f]'
+                )}
+              `}
             >
               {item.icon}
               {item.name}

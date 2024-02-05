@@ -21,8 +21,7 @@ import { CommandOption } from 'commandkey';
 
 - `value` The value of the option.
 - `id` The identification of the option
-- `className` Edit the styles of the button using a CSS class.
-- `style` Edit the list styles inline.
+- `className` Edit the styles of the button using a Tailwind CSS class.
 - `children` Inside it uses any html tag
 - `onClick` Execute a function after click the button.
 
@@ -33,10 +32,8 @@ export interface CommandOptionProps {
   value?: string | number | readonly string[] | undefined;
   id?: string;
   className?: string | any;
-  style?: React.CSSProperties;
   children: React.ReactNode;
   onClick?: () => void;
-  props?: any;
 }
 ```
 

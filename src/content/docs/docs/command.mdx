@@ -21,13 +21,11 @@ import { Command } from 'commandkey';
 
 ### Props
 
-- `children` Inside it uses the input, list and option components.
-- `className` Edit the input styles using a CSS class.
-- `classNameBackground` CSS class for the background behind the Command' Card.
 - `open` Open or close the command palette.
 - `onClose` Function to be executed when the command closes.
-- `style` Edit the container styles inline.
-- `styleBackground` Write CSS for the background behind the Command' Card.
+- `className` Edit the input styles using a Tailwind SS class.
+- `overlayClassName` Edit the styles for the background behind the Card.
+- `children` Inside it uses the input, list and option components.
 
 ### Interface
 
@@ -36,11 +34,8 @@ export interface CommandProps {
   open: boolean;
   onClose: () => void;
   className?: string | any;
-  classNameBackground?: string | any;
-  style?: React.CSSProperties;
-  styleBackground?: React.CSSProperties;
+  overlayClassName?: string | any;
   children: React.ReactNode;
-  props?: any;
 }
 ```
 

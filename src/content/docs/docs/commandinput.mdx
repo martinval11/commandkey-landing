@@ -26,8 +26,7 @@ import { CommandInput } from 'commandkey';
 
 - `onChange` Execute a function after the input value changes.
 - `placeholder` Edit the default placeholder.
-- `style` Edit the styles of the input inline.
-- `className` Edit the styles of the input using a CSS class.
+- `className` Edit the styles of the input using a Tailwind CSS class.
 
 ### Interface
 
@@ -35,11 +34,7 @@ import { CommandInput } from 'commandkey';
 export interface CommandInputProps {
   onChange?: (...args: any) => void;
   placeholder?: string;
-  style?: React.CSSProperties;
   className?: string | any;
-  autoFocus?: boolean;
-  autoComplete?: string;
-  value?: string;
   props?: any;
 }
 ```

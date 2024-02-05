@@ -1,44 +1,16 @@
 ---
 title: Customization
-description: Customize the CommandKey components
+description: Customize the CommandKey components using Tailwind CSS
 ---
 
 import ExampleContainer from '../../../components/ExampleContainer.astro';
 import CommandCustomizedExample from '../../../components/CommandCustomizedExample/CommandCustomizedExample';
 import CommandLanding from '../../../components/CommandLanding/CommandLanding';
 
-The recommended way is to use the `className` attribute to change the stylesheet using a normal CSS file:
+To customize the CommandKey components, you can use the `className` attribute to change the stylesheet using Tailwind CSS.
 
 ```js
-<CommandInput className="custom-input" />
-```
-
-```css
-.custom-input {
-  background: #000 !important; /* Use !important to override the default style */
-}
-```
-
-Or you can use the `style` attribute to change the stylesheet inline:
-
-> It's not recommended to use the `style` attribute. Because it will ignore all the default styles and you will have an unstyled button. If you want to maintain the default button structure, use the `className` attribute.
-
-```js
-<CommandInput
-  style={{
-    // Default Styles
-    outline: 'none',
-    width: '100%',
-    border: 'none',
-    borderBottom: '1px solid rgb(39 39 42)',
-    backgroundColor: 'rgb(24 24 27)',
-    color: '#fff',
-    padding: '16px',
-
-    // Styles Added
-    background: '#000',
-  }}
-/>
+<CommandInput className="" />
 ```
 
 ## Example
@@ -65,47 +37,16 @@ export default function App() {
         <CommandInput placeholder="Search" className={styles.commandInput} />
 
         <CommandList className={styles.commandList}>
-          <CommandOption className={styles.commandOption}>Apple</CommandOption>
-          <CommandOption className={styles.commandOption}>Orange</CommandOption>
-          <CommandOption className={styles.commandOption}>Pear</CommandOption>
-          <CommandOption className={styles.commandOption}>Banana</CommandOption>
+          <CommandOption className="">Apple</CommandOption>
+          <CommandOption className="">Orange</CommandOption>
+          <CommandOption className="">Pear</CommandOption>
+          <CommandOption className="">Banana</CommandOption>
         </CommandList>
       </Command>
     </>
   );
 }
-
 ```
-
-_styles.module.css_
-```css
-.commandContainer {
-  background: #1E1E2E !important;
-  border-color: #545477 !important;
-}
-
-.commandInput {
-  background: #1E1E2E !important;
-  border-color: #545477 !important;
-  padding: 10px !important;
-}
-
-.commandList {
-  flex-direction: row !important;
-}
-
-.commandOption {
-  background: #1E1E2E !important;
-  width: 50% !important;
-  margin-top: 0 !important;
-  transition: background .1s !important;
-
-  &:hover {
-    background: #545477 !important;
-  }
-}
-```
-> `!important` is used to override the default styles
 
 ## Result
 <ExampleContainer>
